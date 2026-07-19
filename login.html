@@ -330,14 +330,14 @@
         
         <p class="use-email-text">or use your email account:</p>
 
-        <form onsubmit="event.preventDefault();" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <form id="login-form" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
           <div class="form-group">
             <i data-lucide="mail" class="form-icon"></i>
-            <input type="email" class="form-input" placeholder="Email" required>
+            <input type="email" class="form-input" id="login-email" placeholder="Email" required>
           </div>
           <div class="form-group">
             <i data-lucide="lock" class="form-icon"></i>
-            <input type="password" class="form-input" placeholder="Password" required>
+            <input type="password" class="form-input" id="login-password" placeholder="Password" required>
           </div>
           
           <a href="#" class="forgot-link">Forgot your password?</a>
@@ -471,5 +471,8 @@
 
   <script src="js/main.js"></script>
   <script>lucide.createIcons();</script>
+  <!-- Supabase & Auth -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
