@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In — Cap Squeeze</title>
-  <meta name="description" content="Frequently asked questions about Cap Squeeze. Learn about flavors, bottle compatibility, shipping, returns, and ingredients.">
+  <meta name="description" content="Get in touch with Cap Squeeze. We're here to help with orders, questions, and feedback. Email, WhatsApp, or fill out the form.">
   <link rel="stylesheet" href="css/style.css?v=40404">
   
   <!-- Favicon -->
@@ -53,91 +53,91 @@
       <a href="how-it-works.html" class="nav-link">How It Works</a>
       <a href="newsletter.html" class="nav-link">Newsletter</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-link ">Contact</a>
     </div>
   </nav>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <p class="page-hero-eyebrow">FAQ</p>
-    <h1>Got <span class="gradient-text">questions</span>? We\'ve got answers.</h1>
-    <p>Everything you need to know about Cap Squeeze, from how it works to our shipping policies. If you can\'t find your answer here, just reach out to us!</p>
+    <p class="page-hero-eyebrow">Contact</p>
+    <h1>We'd love to <span class="gradient-text">hear</span> from you.</h1>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <div style="max-width:900px;margin:0 auto;padding:0 40px 80px;">
+  <!-- CONTENT -->
+  <section class="content-section">
+    <div style="max-width:900px;margin:0 auto;padding:0 40px;">
 
-    <!-- SECTION 1: PRODUCT -->
-    <section class="faq-section" id="product">
-      <h2>Product & Usage</h2>
+      <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;" class="contact-wrapper">
+        
+        <!-- Left Column: Contact Methods -->
+        <div>
+          <h2 style="font-size:2rem;font-weight:800;margin-bottom:16px;">How can we help?</h2>
+          <p style="color:var(--color-text-muted);margin-bottom:40px;font-size:1.05rem;">Whether you have a question about flavors, shipping, or partnering with us, our team is ready to answer all your questions.</p>
+          
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="background:var(--bg-ink);border:1px solid var(--border-color);padding:24px;border-radius:12px;display:flex;gap:20px;align-items:center;">
+              <div style="font-size:1.8rem;"><i data-lucide="mail" class="icon-inline"></i></div>
+              <div>
+                <h4 style="margin-bottom:4px;font-size:1.1rem;">Email Support</h4>
+                <a href="mailto:capsqueeze.co@gmail.com" style="color:var(--color-coral);font-weight:600;">capsqueeze.co@gmail.com</a>
+                <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:4px;">We usually reply within 24 hours.</p>
+              </div>
+            </div>
+            
+            <div style="background:var(--bg-ink);border:1px solid var(--border-color);padding:24px;border-radius:12px;display:flex;gap:20px;align-items:center;">
+              <div style="font-size:1.8rem;"><i data-lucide="message-circle" class="icon-inline"></i></div>
+              <div>
+                <h4 style="margin-bottom:4px;font-size:1.1rem;">WhatsApp</h4>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="color:var(--color-coral);font-weight:600;">+91-XXXXXXXXXX</a>
+                <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:4px;">Mon-Fri from 9am to 6pm IST.</p>
+              </div>
+            </div>
 
-      <div class="faq-item">
-        <button class="faq-q">What exactly is Cap Squeeze? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Cap Squeeze is India's first flavoured bottle cap. It's a specially designed cap with a built-in flavour pod that screws onto any standard water bottle. When you drink, water passes through the pod and gets naturally flavoured — zero sugar, zero mixing, instant taste.</div>
+            <div style="background:var(--bg-ink);border:1px solid var(--border-color);padding:24px;border-radius:12px;display:flex;gap:20px;align-items:center;">
+              <div style="font-size:1.8rem;"><i data-lucide="briefcase" class="icon-inline"></i></div>
+              <div>
+                <h4 style="margin-bottom:4px;font-size:1.1rem;">Business & Wholesale</h4>
+                <a href="mailto:capsqueeze.co@gmail.com?subject=Wholesale" style="color:var(--color-coral);font-weight:600;">Partner with us</a>
+                <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:4px;">For bulk orders and retail distribution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div style="background:var(--bg-surface);border:1px solid var(--border-color);padding:40px;border-radius:16px;">
+          <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">Send a Message</h3>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+              <div class="form-group">
+                <label for="firstName" style="display:block;font-size:0.85rem;margin-bottom:8px;color:var(--color-text-muted);">First Name *</label>
+                <input type="text" id="firstName" placeholder="John" required style="width:100%;padding:14px;background:var(--bg-ink);border:1px solid var(--border-color);border-radius:8px;color:#fff;outline:none;">
+              </div>
+              <div class="form-group">
+                <label for="lastName" style="display:block;font-size:0.85rem;margin-bottom:8px;color:var(--color-text-muted);">Last Name *</label>
+                <input type="text" id="lastName" placeholder="Doe" required style="width:100%;padding:14px;background:var(--bg-ink);border:1px solid var(--border-color);border-radius:8px;color:#fff;outline:none;">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:20px;">
+              <label for="email" style="display:block;font-size:0.85rem;margin-bottom:8px;color:var(--color-text-muted);">Email Address *</label>
+              <input type="email" id="email" placeholder="john@example.com" required style="width:100%;padding:14px;background:var(--bg-ink);border:1px solid var(--border-color);border-radius:8px;color:#fff;outline:none;">
+            </div>
+            <div class="form-group" style="margin-bottom:30px;">
+              <label for="message" style="display:block;font-size:0.85rem;margin-bottom:8px;color:var(--color-text-muted);">How can we help? *</label>
+              <textarea id="message" placeholder="Type your message here..." required style="width:100%;padding:14px;background:var(--bg-ink);border:1px solid var(--border-color);border-radius:8px;color:#fff;outline:none;min-height:140px;resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn-red btn-pill" style="width:100%;padding:16px;">Send Message →</button>
+          </form>
+
+          <div class="form-success" id="formSuccess" style="display:none;background:rgba(39, 103, 73, 0.2);color:#48bb78;padding:16px;border-radius:8px;margin-top:20px;text-align:center;border:1px solid #48bb78;">
+            ✓ Message sent successfully! We'll be in touch soon.
+          </div>
+        </div>
+
       </div>
 
-      <div class="faq-item">
-        <button class="faq-q">How much water can one cap flavor? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">One Cap Squeeze pod is designed to perfectly flavor up to 3 liters (approximately 3-4 standard bottles) of water. The flavor intensity will naturally taper off as you reach the 3-liter mark.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Do the caps expire? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Yes. Our caps have a shelf life of 9 months when sealed in their original airtight foil packaging. Once opened and screwed onto a bottle, we recommend consuming it within 3-4 days for the freshest flavor.</div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: COMPATIBILITY -->
-    <section class="faq-section" id="compatibility" style="margin-top: 60px;">
-      <h2>Compatibility</h2>
-
-      <div class="faq-item">
-        <button class="faq-q">What bottles does it fit? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Cap Squeeze features a universal 28mm PCO 1881 thread. This means it fits 95% of standard packaged water bottles (like Bisleri, Kinley, Aquafina) as well as standard soft drink bottles (Coca-Cola, Pepsi) in India.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Can I use it with sparkling water? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Absolutely! Using Cap Squeeze with sparkling or carbonated water creates a delicious, zero-sugar healthy soda alternative. Just be careful when opening to release the pressure slowly.</div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-q">Does it fit on reusable metal bottles? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Yes, if your reusable metal or plastic bottle has a standard 28mm neck (often found on basic insulated bottles). It will not fit wide-mouth bottles (like Nalgene or HydroFlask) without an adapter.</div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: HEALTH & INGREDIENTS -->
-    <section class="faq-section" id="health" style="margin-top: 60px;">
-      <h2>Health & Ingredients</h2>
-
-      <div class="faq-item">
-        <button class="faq-q">Is it really zero sugar? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Yes. Completely zero sugar. We use organic Stevia leaf extract as a natural sweetener. No sucralose, no acesulfame K, no artificial sweeteners of any kind.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Are there any artificial colors or preservatives? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">No. Our flavors are derived entirely from natural fruit extracts and botanical essences. The liquid remains perfectly clear because we don't add any unnecessary artificial dyes.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Is it safe for children and pregnant women? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">Yes! Except for our "Energy" variants (like Matcha Focus which contains natural caffeine), all our standard fruit flavors are 100% safe for children, diabetics, and pregnant women.</div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: SHIPPING & RETURNS -->
-    <section class="faq-section" id="shipping" style="margin-top: 60px;">
-      <h2>Shipping & Returns</h2>
-
-      <div class="faq-item">
-        <button class="faq-q">How long does shipping take? <span class="faq-q-icon">+</span></button>
-        <div class="faq-a">We deliver anywhere in India within 3-5 business days. Metro cities usually receive orders within 48 hours via premium courier partners like Bluedart and Delhivery.</div>
-      </div>
-    </section>
-
-  </div>
+    </div>
+  </section>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
@@ -248,15 +248,11 @@
   <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float"><i data-lucide="message-circle" class="icon-inline"></i></a>
 
   <script>
-    // FAQ Accordion
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
   </script>
   <script>lucide.createIcons();</script>
 </body>
