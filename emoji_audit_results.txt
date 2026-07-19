@@ -1,0 +1,4 @@
+Found emojis:
+about.html: 📅 💡 🌐 🌿
+contact.html: ✉ 🤝
+flavors.html: 🍓 🥝 🫐 🍊 🍒 🥭 🍉 🍍 🍑 🍏 🌿
