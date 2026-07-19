@@ -12,7 +12,7 @@
   
   <!-- Razorpay Checkout -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-</head>
+  <link rel="icon" href="images/favicon.png" type="image/png">\n  <script src="https://unpkg.com/lucide@latest"></script>\n</head>
 <body>
 
   <!-- TOP BAR -->
@@ -78,7 +78,7 @@
       <div class="flavors-list-grid">
         <!-- Flavor 1 -->
         <div class="flavor-mini-card">
-          <div class="flavor-emoji">🍋</div>
+          <div class="flavor-emoji"><i data-lucide="leaf" class="icon-inline"></i></div>
           <h4 class="flavor-name">Lemon Zest</h4>
           <p class="flavor-profile">Bright, citrusy, and deeply refreshing.</p>
           <a href="#" class="flavor-add-btn">Add +</a>
@@ -228,7 +228,7 @@
 
         <!-- PRODUCT 3 -->
         <div class="product-full-card" style="position:relative; overflow:hidden; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; background: var(--bg-card); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <span class="pfc-badge" style="background: var(--bg-surface); color: var(--color-text-main); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid var(--border-color);">🍋 Pick Your Fave</span>
+          <span class="pfc-badge" style="background: var(--bg-surface); color: var(--color-text-main); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid var(--border-color);"><i data-lucide="leaf" class="icon-inline"></i> Pick Your Fave</span>
           <div class="pfc-img" style="text-align:center; padding: 20px 0;"><img src="images/products/cap-lime.png" alt="Single Flavor 6-Pack" style="max-width:80%; margin:0 auto; transition: transform 0.3s ease;"></div>
           <div style="display:flex; gap:6px; margin-bottom: 12px; flex-wrap: wrap;">
              <span style="background: rgba(139, 195, 74, 0.15); color: #558b2f; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Zesty</span>
@@ -301,7 +301,10 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-col footer-col--brand">
-        <a href="index.html" class="footer-logo">Cap Squeeze.</a>
+        <a href="index.html" class="footer-logo" style="display:flex; align-items:center; margin-bottom:15px;">
+          <img src="images/logo.png" alt="Cap Squeeze" style="height:45px; margin-right:12px;">
+          Cap Squeeze.
+        </a>
         <p style="font-size:.9rem;opacity:.85;margin-bottom:16px;line-height:1.6;">India's first flavoured bottle cap. Zero sugar. Any bottle. 12+ flavors.</p>
         <p class="footer-help">Need Help?</p>
         <p>Visit our <a href="contact.html">Customer Support</a><br>or email us at</p>
@@ -384,18 +387,18 @@
     </div>
 
     <div class="footer-copyright">
-      <p>&copy; 2026 Cap Squeeze. All rights reserved. Made with 💛 in India 🇮🇳</p>
+      <p>&copy; 2026 Cap Squeeze. All rights reserved. Made with <i data-lucide="heart" class="icon-inline"></i> in India <i data-lucide="map-pin" class="icon-inline"></i></p>
       <div class="trust-badges">
-        <span class="trust-badge">✅ FSSAI Certified</span>
-        <span class="trust-badge">🚫 Zero Sugar</span>
-        <span class="trust-badge">🇮🇳 Made in India</span>
-        <span class="trust-badge">🔒 Secure Payments</span>
+        <span class="trust-badge"><i data-lucide="check-circle" class="icon-inline"></i> FSSAI Certified</span>
+        <span class="trust-badge"><i data-lucide="ban" class="icon-inline"></i> Zero Sugar</span>
+        <span class="trust-badge"><i data-lucide="map-pin" class="icon-inline"></i> Made in India</span>
+        <span class="trust-badge"><i data-lucide="lock" class="icon-inline"></i> Secure Payments</span>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">💬</a>
+  <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float"><i data-lucide="message-circle" class="icon-inline"></i></a>
 
   <script src="js/main.js?v=1783704763"></script>
-</body>
+  <script>lucide.createIcons();</script>\n</body>
 </html>
