@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Flavors & Kits — Cap Squeeze</title>
+  <meta name="description" content="Shop Cap Squeeze flavour pods, starter kits, and refill packs. 12+ zero sugar natural flavors — Mango, Lemon, Strawberry and more. Free shipping above ₹499.">
+  <link rel="stylesheet" href="css/style.css?v=40404">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Cap Squeeze.png">
+  
+  <!-- Razorpay Checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left"><a href="about.html">About Us</a><a href="contact.html">Customer Support</a></div>
+      <div class="top-bar-center">Free shipping on orders above ₹499. Use code <strong>FIRST10</strong> for 10% off!</div>
+      <div class="top-bar-right"><a href="#" class="login-link">Log In</a></div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="Cap Squeeze.png" alt="Cap Squeeze" style="height: 48px; width: auto; display: inline-block;">
+      </a>
+      <div class="header-right-icons">
+        <button class="search-icon-btn" aria-label="Search" style="margin-left: 0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <a href="about.html" aria-label="About">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+        <a href="#" aria-label="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a href="#" class="cart-icon-link" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="how-it-works.html" class="nav-link">How It Works</a>
+      <a href="flavors.html" class="nav-link nav-link--active">Shop Flavors</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">Shop</p>
+    <h1>Pick your <span class="gradient-text">flavor</span>. Love your water.</h1>
+    <p>12+ all-natural flavour pods. Zero sugar. Works on any standard bottle. Starting at just ₹149 per cap.</p>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="content-section">
+    <div style="max-width:1200px;margin:0 auto;">
+
+      <!-- 12 FLAVORS SECTION -->
+  <section class="content-section" style="padding-top: 20px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <h2 style="font-size: 2.2rem; font-weight: 800; text-align: center; margin-bottom: 40px; color: var(--color-text-main); font-family: 'Space Grotesk', sans-serif;">Meet Our 12 Flavors</h2>
+      <div class="flavors-list-grid">
+        <!-- Flavor 1 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍋</div>
+          <h4 class="flavor-name">Lemon Zest</h4>
+          <p class="flavor-profile">Bright, citrusy, and deeply refreshing.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 2 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍓</div>
+          <h4 class="flavor-name">Strawberry Burst</h4>
+          <p class="flavor-profile">Sweet, juicy, summer berry goodness.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 3 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍉</div>
+          <h4 class="flavor-name">Wild Watermelon</h4>
+          <p class="flavor-profile">Crisp and hydrating, perfect for hot days.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 4 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🌿</div>
+          <h4 class="flavor-name">Minty Fresh</h4>
+          <p class="flavor-profile">Cool, botanical, and invigorating.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 5 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🥭</div>
+          <h4 class="flavor-name">Mango Tango</h4>
+          <p class="flavor-profile">Tropical, luscious, and naturally sweet.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 6 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍏</div>
+          <h4 class="flavor-name">Green Apple Tart</h4>
+          <p class="flavor-profile">A crisp, sour bite that wakes you up.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 7 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍑</div>
+          <h4 class="flavor-name">Peach Paradise</h4>
+          <p class="flavor-profile">Soft, floral, and delicately fruity.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 8 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🫐</div>
+          <h4 class="flavor-name">Blueberry Splash</h4>
+          <p class="flavor-profile">Deep, rich, and loaded with antioxidants.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 9 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍊</div>
+          <h4 class="flavor-name">Citrus Grapefruit</h4>
+          <p class="flavor-profile">Zesty, mildly bitter, incredibly thirst-quenching.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 10 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🥝</div>
+          <h4 class="flavor-name">Kiwi Melon</h4>
+          <p class="flavor-profile">A unique blend of tangy kiwi and smooth melon.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 11 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍒</div>
+          <h4 class="flavor-name">Raspberry Lemonade</h4>
+          <p class="flavor-profile">The ultimate sweet and tart combination.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+        <!-- Flavor 12 -->
+        <div class="flavor-mini-card">
+          <div class="flavor-emoji">🍍</div>
+          <h4 class="flavor-name">Coconut Pineapple</h4>
+          <p class="flavor-profile">A mini vacation in a bottle.</p>
+          <a href="#" class="flavor-add-btn">Add +</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active">All</button>
+        <button class="filter-tab">Starter Kits</button>
+        <button class="filter-tab">Refill Packs</button>
+        <button class="filter-tab">Single Flavors</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-full-card" style="position:relative; overflow:hidden; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; background: var(--bg-card); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <span class="pfc-badge" style="background: var(--color-coral); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px;">&#11088; Best Seller</span>
+          <div class="pfc-img" style="text-align:center; padding: 20px 0;"><img src="images/products/caps-group.png" alt="Starter Kit" style="max-width:80%; margin:0 auto; transition: transform 0.3s ease;"></div>
+          <div style="display:flex; gap:6px; margin-bottom: 12px; flex-wrap: wrap;">
+             <span style="background: rgba(240, 160, 75, 0.15); color: var(--color-coral); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Sweet & Tangy</span>
+             <span style="background: rgba(246, 196, 83, 0.15); color: #b88a10; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Refreshing</span>
+          </div>
+          <p class="pfc-title" style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 6px;">Cap Squeeze Starter Kit</p>
+          <div style="display:flex; align-items:center; gap: 4px; margin-bottom: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
+            <span style="color: #f6c453;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>4.9 (2.1k Reviews)</span>
+          </div>
+          <p class="pfc-desc" style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 20px;">The ultimate gateway to guilt-free hydration. Includes our premium reusable flavor-infusion cap and 6 of our best-selling zero-sugar pods.</p>
+          
+          <select class="pfc-select" style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--color-text-main); margin-bottom: 20px; font-family: inherit;">
+            <option>Variety Pack (Best Mix)</option>
+            <option>Citrus Pack</option>
+          </select>
+          
+          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
+            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1599</span>
+            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1799</span>
+          </div>
+          <button class="pfc-atc" data-name="Cap Squeeze Starter Kit" data-price="1599" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-full-card" style="position:relative; overflow:hidden; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; background: var(--bg-card); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <span class="pfc-badge" style="background: var(--color-pink); color: #183a1d; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px;">&#128176; Best Value</span>
+          <div class="pfc-img" style="text-align:center; padding: 20px 0;"><img src="images/products/caps-group.png" alt="Refill Mega-Pack" style="max-width:80%; margin:0 auto; transition: transform 0.3s ease;"></div>
+          <div style="display:flex; gap:6px; margin-bottom: 12px; flex-wrap: wrap;">
+             <span style="background: rgba(240, 160, 75, 0.15); color: var(--color-coral); padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Customizable</span>
+          </div>
+          <p class="pfc-title" style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 6px;">Refill Mega-Pack (12)</p>
+          <div style="display:flex; align-items:center; gap: 4px; margin-bottom: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
+            <span style="color: #f6c453;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>4.8 (850 Reviews)</span>
+          </div>
+          <p class="pfc-desc" style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 20px;">Never run out of your favorite taste. 12 organic, eco-friendly refill pods designed to keep you hydrated and refreshed all month long.</p>
+          
+          <select class="pfc-select" style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--color-text-main); margin-bottom: 20px; font-family: inherit;">
+            <option>All 12 Flavors Mix</option>
+            <option>Berry Explosion Mix</option>
+          </select>
+          
+          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
+            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1799</span>
+            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1999</span>
+          </div>
+          <button class="pfc-atc" data-name="Refill Mega-Pack (12 Pods)" data-price="1799" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-full-card" style="position:relative; overflow:hidden; border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; background: var(--bg-card); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <span class="pfc-badge" style="background: var(--bg-surface); color: var(--color-text-main); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid var(--border-color);">🍋 Pick Your Fave</span>
+          <div class="pfc-img" style="text-align:center; padding: 20px 0;"><img src="images/products/cap-lime.png" alt="Single Flavor 6-Pack" style="max-width:80%; margin:0 auto; transition: transform 0.3s ease;"></div>
+          <div style="display:flex; gap:6px; margin-bottom: 12px; flex-wrap: wrap;">
+             <span style="background: rgba(139, 195, 74, 0.15); color: #558b2f; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Zesty</span>
+             <span style="background: rgba(3, 169, 244, 0.15); color: #0277bd; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Hydrating</span>
+          </div>
+          <p class="pfc-title" style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 6px;">Single Flavor 6-Pack</p>
+          <div style="display:flex; align-items:center; gap: 4px; margin-bottom: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
+            <span style="color: #f6c453;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>4.7 (1.2k Reviews)</span>
+          </div>
+          <p class="pfc-desc" style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 20px;">Obsessed with just one flavor? We get it. Get a 6-pack of your absolute favorite zero-calorie pod for uninterrupted daily enjoyment.</p>
+          
+          <select class="pfc-select" style="width:100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--color-text-main); margin-bottom: 20px; font-family: inherit;">
+            <option>Lemon Zest</option>
+            <option>Strawberry Burst</option>
+            <option>Wild Watermelon</option>
+            <option>Minty Fresh</option>
+          </select>
+          
+          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
+            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1449</span>
+            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1549</span>
+          </div>
+          <button class="pfc-atc" data-name="Single Flavor 6-Pack" data-price="1449" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .product-full-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(24, 58, 29, 0.1);
+    }
+    .product-full-card:hover .pfc-img img {
+      transform: scale(1.05);
+    }
+    .pfc-atc:hover {
+      background: var(--color-coral) !important;
+      color: #fff !important;
+    }
+  </style>
+
+  
+  
+
+<!-- NUTRITION SECTION -->
+  <section class="content-section content-section--gray">
+    <div style="max-width:1200px;margin:0 auto;">
+      <h2 style="font-size:1.9rem;font-weight:800;margin-bottom:20px;text-align:center;">Clean ingredients. Real nutrition.</h2>
+
+      <div class="nutrition-stats">
+        <div class="nut-stat">
+          <span class="nut-val">0g</span>
+          <span class="nut-label">Sugar</span>
+        </div>
+        <div class="nut-stat">
+          <span class="nut-val">3</span>
+          <span class="nut-label">Calories</span>
+        </div>
+        <div class="nut-stat">
+          <span class="nut-val">100%</span>
+          <span class="nut-label">Vitamin C</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo">Cap Squeeze.</a>
+        <p style="font-size:.9rem;opacity:.85;margin-bottom:16px;line-height:1.6;">India's first flavoured bottle cap. Zero sugar. Any bottle. 12+ flavors.</p>
+        <p class="footer-help">Need Help?</p>
+        <p>Visit our <a href="contact.html">Customer Support</a><br>or email us at</p>
+        <p class="footer-phone">hello@capsqueeze.com</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/capsqueeze" target="_blank" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#183a1d" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://youtube.com/@capsqueeze" target="_blank" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#183a1d"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.53C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#e3000b"/></svg>
+          </a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#183a1d"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="flavors.html">Shop Flavors</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="flavors.html">Citrus</a></li>
+          <li><a href="flavors.html">Berry</a></li>
+          <li><a href="flavors.html">Tropical</a></li>
+          <li><a href="flavors.html">Mint &amp; Fresh</a></li>
+          <li><a href="flavors.html">Bundles</a></li>
+          <li><a href="flavors.html">Starter Kits</a></li>
+          <li><a href="flavors.html">Refill Packs</a></li>
+          <li><a href="flavors.html">Monthly Bundle</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Customer Support</a></li>
+          <li><a href="faq.html#shipping">Shipping Info</a></li>
+          <li><a href="faq.html#returns">Returns Policy</a></li>
+          <li><a href="contact.html" title="Careers — We're Hiring Soon">Careers</a></li>
+          <li><span style="opacity:.5;font-size:.85rem;cursor:default;" title="Coming Soon">Blog (Coming Soon)</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>My Choice</h4>
+        <ul>
+          <li><a href="#">Favorites</a></li>
+          <li><a href="#">My Orders</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Subscriptions</a></li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        
+      </div>
+      
+      
+    </div>
+
+    <div class="footer-copyright">
+      <p>&copy; 2026 Cap Squeeze. All rights reserved. Made with 💛 in India 🇮🇳</p>
+      <div class="trust-badges">
+        <span class="trust-badge">✅ FSSAI Certified</span>
+        <span class="trust-badge">🚫 Zero Sugar</span>
+        <span class="trust-badge">🇮🇳 Made in India</span>
+        <span class="trust-badge">🔒 Secure Payments</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">💬</a>
+
+  <script src="js/main.js?v=1783704763"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="8" fill="#0a0a0a"/>
+  <!-- Leaf drawing in lime green -->
+  <path d="M24 10C16 10 12 18 12 28C12 36 18 38 24 38C30 38 36 36 36 28C36 18 32 10 24 10Z" fill="none" stroke="#9EFF00" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M24 10V38" stroke="#9EFF00" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 20C27 23 29 23 31 22" stroke="#9EFF00" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 26C21 29 19 29 17 28" stroke="#9EFF00" stroke-width="2" stroke-linecap="round"/>
+</svg>

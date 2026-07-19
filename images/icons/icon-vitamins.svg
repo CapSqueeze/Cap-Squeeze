@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="8" fill="#0a0a0a"/>
+  <!-- Energy/nutrition spark and capsule -->
+  <path d="M16 28L28 14H32V20H20" stroke="#9EFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M32 20L20 34H16V28H28" stroke="#9EFF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="32" cy="14" r="2.5" fill="#9EFF00"/>
+  <circle cx="16" cy="34" r="2.5" fill="#9EFF00"/>
+</svg>
