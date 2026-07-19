@@ -3,11 +3,11 @@
 const SUPABASE_URL = 'https://ceszjffxeswpffjugnmj.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNlc3pqZmZ4ZXN3cGZmanVnbm1qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0NzI5OTMsImV4cCI6MjEwMDA0ODk5M30.u0rL0jnqnICTc62DvUZ9wyriC2hZ7wFSCypr_4dMmbY';
 
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Check if user is logged in and update UI
 async function checkUserSession() {
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await supabaseClient.auth.getSession();
   
   const loginLinks = document.querySelectorAll('.login-link');
   
@@ -21,7 +21,7 @@ async function checkUserSession() {
       link.href = "#";
       link.addEventListener('click', async (e) => {
         e.preventDefault();
-        await supabase.auth.signOut();
+        await supabaseClient.auth.signOut();
         window.location.reload();
       });
     });
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   googleBtns.forEach(btn => {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: window.location.origin + '/index.html'
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById('signup-password').value;
       const name = document.getElementById('signup-name').value;
       
-      const { data, error } = await supabase.auth.signUp({
+      const { data, error } = await supabaseClient.auth.signUp({
         email,
         password,
         options: {
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById('login-email').value;
       const password = document.getElementById('login-password').value;
       
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
         email,
         password
       });
