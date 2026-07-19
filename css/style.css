@@ -117,7 +117,7 @@ h1, h2, h3, h4, .font-heading {
   color: #ffffff;
   font-size: 0.8rem;
   padding: 10px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .top-bar a {
@@ -155,7 +155,7 @@ h1, h2, h3, h4, .font-heading {
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .header-inner {
@@ -225,7 +225,7 @@ h1, h2, h3, h4, .font-heading {
 ============================================ */
 .main-nav {
   background: var(--bg-ink);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .nav-inner {
@@ -334,7 +334,7 @@ h1, h2, h3, h4, .font-heading {
   padding: 12px 0;
   white-space: nowrap;
   border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .marquee-track {
@@ -359,7 +359,7 @@ h1, h2, h3, h4, .font-heading {
 .features-bar {
   background: var(--bg-ink);
   padding: 40px 40px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .features-inner {
@@ -399,7 +399,7 @@ h1, h2, h3, h4, .font-heading {
 .product-section {
   background: var(--bg-surface);
   padding: 80px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .section-heading {
@@ -457,9 +457,8 @@ h1, h2, h3, h4, .font-heading {
   overflow: hidden;
 }
 .product-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(24, 58, 29, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(24, 58, 29, 0.05);
 }
 
 .card-badge {
@@ -488,7 +487,7 @@ h1, h2, h3, h4, .font-heading {
   justify-content: center;
   padding: 20px;
   background: rgba(24,58,29,0.01);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 .card-img img {
   max-height: 130px;
@@ -584,7 +583,7 @@ h1, h2, h3, h4, .font-heading {
 .promo-section {
   background: var(--bg-ink);
   padding: 80px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .promo-row {
@@ -687,7 +686,7 @@ h1, h2, h3, h4, .font-heading {
 .categories-section {
   background: var(--bg-surface);
   padding: 80px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .categories-grid {
@@ -747,7 +746,7 @@ h1, h2, h3, h4, .font-heading {
 .app-banner {
   background: var(--bg-ink);
   padding: 80px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   position: relative;
   overflow: hidden;
 }
@@ -763,11 +762,10 @@ h1, h2, h3, h4, .font-heading {
 
 .phone-frame {
   width: 220px;
-  background: #111116;
-  border: 1px solid var(--border-color);
-  border-radius: 36px;
-  padding: 12px;
-  box-shadow: 0 25px 60px rgba(24, 58, 29, 0.15);
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 .phone-screen {
@@ -782,8 +780,8 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .phone-product-info {
-  background: #183a1d;
-  border: 1px solid var(--border-color);
+  background: transparent;
+  border: none;
   border-radius: 12px;
   padding: 12px;
   margin-top: 10px;
@@ -839,7 +837,7 @@ h1, h2, h3, h4, .font-heading {
   color: var(--bg-ink);
   padding: 100px 40px;
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .newsletter-inner h2 {
@@ -1016,7 +1014,7 @@ h1, h2, h3, h4, .font-heading {
   background: var(--bg-ink);
   padding: 100px 40px;
   text-align: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   position: relative;
 }
 
@@ -1050,7 +1048,7 @@ h1, h2, h3, h4, .font-heading {
 .content-section {
   padding: 80px 40px;
   background: var(--bg-ink);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 .content-section--gray {
@@ -1083,12 +1081,12 @@ h1, h2, h3, h4, .font-heading {
   font-weight: 700;
   color: var(--color-text-main);
   margin-bottom: 30px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   padding-bottom: 14px;
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   padding: 20px 0;
 }
 
@@ -1276,7 +1274,7 @@ h1, h2, h3, h4, .font-heading {
 /* Accordion style detail list */
 .bullet-list li {
   padding: 12px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   font-size: 0.95rem;
   color: var(--color-text-muted);
 }
