@@ -146,6 +146,19 @@ h1, h2, h3, h4, .font-heading {
 }
 .login-link:hover { color: #ffffff; opacity: 0.8; }
 
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.signup-link {
+  color: #ffffff;
+}
+.signup-link:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
 /* ============================================
    MAIN HEADER
 ============================================ */
