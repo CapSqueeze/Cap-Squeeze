@@ -957,11 +957,11 @@ h1, h2, h3, h4, .font-heading {
 
 .footer-copyright {
   background: #183a1d;
-  color: var(--bg-ink);
+  color: #ffffff;
   text-align: center;
   padding: 20px;
   font-size: 0.8rem;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-social a {
@@ -1011,13 +1011,13 @@ h1, h2, h3, h4, .font-heading {
 }
 
 .trust-badge {
-  background: rgba(24,58,29,0.02);
-  color: var(--color-text-muted);
+  background: transparent;
+  color: rgba(255,255,255,0.7);
   font-size: 0.72rem;
   font-weight: 600;
   padding: 4px 12px;
   border-radius: 50px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* ============================================
