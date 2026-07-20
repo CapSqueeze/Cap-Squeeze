@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (error) {
         console.error('Error logging in with Google:', error);
-        alert('Failed to login with Google.');
+        alert('Google Login Error: ' + error.message);
       }
     });
   });
