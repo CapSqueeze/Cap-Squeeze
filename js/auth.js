@@ -10,10 +10,19 @@ async function checkUserSession() {
   const { data: { session } } = await supabaseClient.auth.getSession();
   
   const loginLinks = document.querySelectorAll('.login-link');
+  const signupLinks = document.querySelectorAll('.signup-link');
   
   if (session) {
     // User is logged in
     loginLinks.forEach(link => {
+      link.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Dashboard
+      `;
+      link.href = "dashboard.html";
+    });
+    
+    signupLinks.forEach(link => {
       link.innerHTML = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
         Log Out
@@ -39,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { data, error } = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.origin + '/index.html'
+          redirectTo: window.location.origin + '/dashboard.html'
         }
       });
       if (error) {
@@ -72,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (error) {
         alert(error.message);
       } else {
-        alert('Signup successful! Check your email for confirmation, or try logging in.');
-        window.location.href = 'login.html';
+        alert('Signup successful! Check your email for confirmation (if required), or try logging in.');
+        window.location.href = 'dashboard.html';
       }
     });
   }
@@ -95,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (error) {
         alert(error.message);
       } else {
-        window.location.href = 'index.html';
+        window.location.href = 'dashboard.html';
       }
     });
   }
