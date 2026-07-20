@@ -37,7 +37,7 @@ async function checkUserSession() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function initAuth() {
   checkUserSession();
   
   // Google Auth Button
@@ -108,4 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", initAuth);
+} else {
+  initAuth();
+}
