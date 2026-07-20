@@ -1,0 +1,538 @@
+import os
+
+dashboard_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Cap Squeeze</title>
+  
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=50505">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Dashboard specific styles */
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 40px;
+    }
+    
+    .dashboard-sidebar {
+      background: #f9fbfa;
+      padding: 30px 20px;
+      border-radius: 12px;
+      height: fit-content;
+    }
+    .dashboard-sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar-menu li {
+      margin-bottom: 10px;
+    }
+    .sidebar-menu a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      text-decoration: none;
+      color: #666;
+      border-radius: 8px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+    .sidebar-menu a:hover, .sidebar-menu a.active {
+      background: var(--color-coral, #ef5350);
+      color: #fff;
+    }
+    .sidebar-menu a svg {
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .dashboard-content {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    }
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-title {
+      font-size: 2rem;
+      color: var(--color-green, #2b4c3b);
+      margin-bottom: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* Cart Styles */
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .cart-item-price {
+      color: var(--color-coral, #ef5350);
+      font-weight: 700;
+    }
+    .cart-summary {
+      margin-top: 30px;
+      background: #f9fbfa;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: right;
+    }
+    .cart-summary h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .checkout-btn {
+      background: var(--color-coral, #ef5350);
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .checkout-btn:hover {
+      background: #d32f2f;
+      transform: translateY(-2px);
+    }
+
+    /* Track Order Styles */
+    .order-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+    .order-id {
+      font-weight: 700;
+      color: #333;
+    }
+    .order-date {
+      color: #777;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #eee;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -30px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #eee;
+      border: 2px solid #fff;
+    }
+    .timeline-item.completed .timeline-dot {
+      background: var(--color-coral, #ef5350);
+    }
+    .timeline-item.active .timeline-dot {
+      background: var(--color-green, #2b4c3b);
+      box-shadow: 0 0 0 4px rgba(43, 76, 59, 0.2);
+    }
+    .timeline-content h4 {
+      margin: 0 0 5px 0;
+      font-size: 1.05rem;
+      color: #333;
+    }
+    .timeline-content p {
+      margin: 0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .dashboard-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== TOP UTILITY BAR ========== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Customer Support</a>
+      </div>
+      <div class="top-bar-center">
+        Free shipping on orders above ₹499. <a href="flavors.html">Shop Now</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="login.html" class="login-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Log In
+        </a>
+        <a href="signup.html" class="signup-link">
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" style="display:flex; align-items:center;">
+        <img src="images/logo.png" alt="Cap Squeeze" style="height:40px; margin-right:10px;">
+        Cap Squeeze.
+      </a>
+
+      <div class="header-right-icons">
+        <button class="search-icon-btn" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <a href="about.html" aria-label="About">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+        <a href="#" aria-label="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+        <a href="#" class="cart-icon-link" aria-label="Cart" onclick="switchTab('cart')">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cart-badge-count">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN NAVIGATION ========== -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="flavors.html" class="nav-link">Shop Flavors</a>
+      <a href="how-it-works.html" class="nav-link">How It Works</a>
+      <a href="newsletter.html" class="nav-link">Newsletter</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== DASHBOARD CONTENT ========== -->
+  <div class="dashboard-container">
+    <aside class="dashboard-sidebar">
+      <h3>My Account</h3>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#" class="active" data-target="overview" onclick="switchTab('overview')">
+            <i data-lucide="layout-dashboard"></i> Overview
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="cart" onclick="switchTab('cart')">
+            <i data-lucide="shopping-cart"></i> My Cart
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="orders" onclick="switchTab('orders')">
+            <i data-lucide="package"></i> Track Order
+          </a>
+        </li>
+        <li>
+          <a href="#" data-target="settings" onclick="switchTab('settings')">
+            <i data-lucide="settings"></i> Settings
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      
+      <!-- OVERVIEW SECTION -->
+      <section id="overview" class="content-section active">
+        <h2 class="content-title">Welcome Back!</h2>
+        <p style="color: #666; font-size: 1.1rem; line-height: 1.6;">
+          We're glad to see you again. From your dashboard, you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.
+        </p>
+        <div style="display: flex; gap: 20px; margin-top: 40px;">
+          <div style="flex: 1; padding: 25px; background: #f9fbfa; border-radius: 12px; border: 1px solid #eee;">
+            <h4 style="margin-top:0; color: #2b4c3b; display: flex; align-items: center;"><i data-lucide="shopping-bag" style="margin-right: 10px;"></i> Recent Orders</h4>
+            <p style="color: #777;">You have 1 order currently in transit.</p>
+            <a href="#" onclick="switchTab('orders')" style="color: var(--color-coral); font-weight: 600; text-decoration: none;">Track Order &rarr;</a>
+          </div>
+          <div style="flex: 1; padding: 25px; background: #f9fbfa; border-radius: 12px; border: 1px solid #eee;">
+            <h4 style="margin-top:0; color: #2b4c3b; display: flex; align-items: center;"><i data-lucide="shopping-cart" style="margin-right: 10px;"></i> Saved Cart</h4>
+            <p style="color: #777;">You have 2 items saved in your cart.</p>
+            <a href="#" onclick="switchTab('cart')" style="color: var(--color-coral); font-weight: 600; text-decoration: none;">View Cart &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CART SECTION -->
+      <section id="cart" class="content-section">
+        <h2 class="content-title">My Cart</h2>
+        
+        <div class="cart-item">
+          <img src="images/products/product-1.png" alt="Zesty Lemon">
+          <div class="cart-item-details">
+            <div class="cart-item-title">Zesty Lemon Flavour Cap (Pack of 5)</div>
+            <div style="color: #777; font-size: 0.9rem;">Qty: 1</div>
+          </div>
+          <div class="cart-item-price">₹199</div>
+        </div>
+        
+        <div class="cart-item">
+          <img src="images/products/product-2.png" alt="Berry Blast">
+          <div class="cart-item-details">
+            <div class="cart-item-title">Berry Blast Flavour Cap (Pack of 5)</div>
+            <div style="color: #777; font-size: 0.9rem;">Qty: 2</div>
+          </div>
+          <div class="cart-item-price">₹398</div>
+        </div>
+
+        <div class="cart-summary">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px; color: #666;">
+            <span>Subtotal</span>
+            <span>₹597</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px; color: #666;">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 15px; margin-bottom: 25px;">
+            <h3 style="margin: 0; color: #333;">Total</h3>
+            <h3 style="margin: 0; color: var(--color-coral);">₹597</h3>
+          </div>
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </section>
+
+      <!-- TRACK ORDER SECTION -->
+      <section id="orders" class="content-section">
+        <h2 class="content-title">Track Order</h2>
+        
+        <div class="order-card">
+          <div class="order-header">
+            <div class="order-id">Order #CS-89240</div>
+            <div class="order-date">Placed on July 18, 2026</div>
+          </div>
+          
+          <div class="timeline">
+            <div class="timeline-item completed">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Order Placed</h4>
+                <p>July 18, 10:42 AM</p>
+              </div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Processing</h4>
+                <p>July 18, 2:15 PM</p>
+              </div>
+            </div>
+            <div class="timeline-item active">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Shipped</h4>
+                <p>July 19, 9:00 AM - Package handed to courier.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Out for Delivery</h4>
+                <p>Expected by end of day today.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Delivered</h4>
+                <p>Pending</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-card" style="opacity: 0.6;">
+          <div class="order-header">
+            <div class="order-id">Order #CS-78112</div>
+            <div class="order-date">Placed on June 05, 2026</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 500; color: var(--color-green);"><i data-lucide="check-circle" class="icon-inline"></i> Delivered</div>
+            <button style="padding: 8px 15px; border: 1px solid #ddd; background: transparent; border-radius: 6px; cursor: pointer;">View Details</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS SECTION -->
+      <section id="settings" class="content-section">
+        <h2 class="content-title">Account Settings</h2>
+        <p style="color: #777;">Update your account details and preferences.</p>
+        
+        <form style="max-width: 500px; margin-top: 30px;" onsubmit="event.preventDefault(); alert('Settings updated!');">
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Full Name</label>
+            <input type="text" value="Customer" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+          </div>
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Email Address</label>
+            <input type="email" value="customer@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;" readonly>
+          </div>
+          <div style="margin-bottom: 30px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Phone Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+          </div>
+          <button type="submit" class="checkout-btn">Save Changes</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-logo" style="display:flex; align-items:center; margin-bottom:15px;">
+          <img src="images/logo.png" alt="Cap Squeeze" style="height:45px; margin-right:12px;">
+          Cap Squeeze.
+        </a>
+        <p style="font-size:.9rem;opacity:.85;margin-bottom:16px;line-height:1.6;">Cap Squeeze is India's first flavoured bottle cap. Turn any standard water bottle into a delicious, zero-sugar, vitamin-enhanced drink instantly. Over 12+ refreshing flavors made with real fruit extracts.</p>
+        <p class="footer-help">Need Help?</p>
+        <a href="mailto:hello@capsqueeze.com" class="footer-email">hello@capsqueeze.com</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="flavors.html">All Flavors</a></li>
+          <li><a href="#">Starter Kits</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Customer Support</a></li>
+          <li><a href="shipping.html">Shipping Info</a></li>
+          <li><a href="returns.html">Returns Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>My Choice</h4>
+        <ul>
+          <li><a href="#" onclick="switchTab('orders')">My Orders</a></li>
+          <li><a href="#" onclick="switchTab('orders')">Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 Cap Squeeze. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+    
+    // Simple tab switching logic for dashboard
+    function switchTab(tabId) {
+      // Prevent default anchor behavior if called from a link
+      if(event && event.preventDefault) event.preventDefault();
+      
+      // Update sidebar active state
+      document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
+      const activeLink = document.querySelector(`.sidebar-menu a[data-target="${tabId}"]`);
+      if(activeLink) activeLink.classList.add('active');
+      
+      // Update content section active state
+      document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+      const activeSection = document.getElementById(tabId);
+      if(activeSection) activeSection.classList.add('active');
+      
+      // Scroll to top of content
+      window.scrollTo({ top: document.querySelector('.dashboard-container').offsetTop - 50, behavior: 'smooth' });
+    }
+  </script>
+  <!-- Supabase & Auth -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
+"""
+
+with open("dashboard.html", "w", encoding="utf-8") as f:
+    f.write(dashboard_html)
+
+print("dashboard.html created successfully.")
