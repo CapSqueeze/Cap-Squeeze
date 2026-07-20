@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import os
+
+newsletter_html = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -556,3 +558,9 @@
   <script src="js/auth.js"></script>
 </body>
 </html>
+"""
+
+with open("newsletter.html", "w", encoding="utf-8") as f:
+    f.write(newsletter_html)
+
+print("newsletter.html created successfully.")
