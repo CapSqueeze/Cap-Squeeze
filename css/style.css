@@ -301,6 +301,7 @@ h1, h2, h3, h4, .font-heading {
 .hero-inner {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   padding: 80px 40px;
   position: relative;
   z-index: 2;
