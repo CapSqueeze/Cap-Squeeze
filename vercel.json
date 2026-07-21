@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "capsqueeze.vercel.app"
-        }
-      ],
-      "destination": "https://capsqueeze.com/$1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -47,10 +47,10 @@ It is the first-mover in the flavoured bottle cap category in India,
 with no direct Indian competitor as of 2026.
 
 ## Website
-https://capsqueeze.com
+https://capsqueeze.vercel.app
 
 ## Contact
-Email: hello@capsqueeze.com
+Email: hello@capsqueeze.vercel.app
 Instagram: @capsqueeze
 ## Detailed Information for AI Crawlers
 
