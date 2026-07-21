@@ -41,5 +41,5 @@ User-agent: CCBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://capsqueeze-kxtzb7xug-capsqueeze-kxtzb7xug-capsqueeze.vercel.app/sitemap.xml
-Host: https://capsqueeze-kxtzb7xug-capsqueeze-kxtzb7xug-capsqueeze.vercel.app
+Sitemap: https://capsqueeze-kxtzb7xug-capsqueeze-capsqueeze.vercel.app/sitemap.xml
+Host: https://capsqueeze-kxtzb7xug-capsqueeze-capsqueeze.vercel.app
