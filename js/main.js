@@ -181,16 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Newsletter Form Handler
+// ---- Global Empty Link Handler ----
 document.addEventListener('DOMContentLoaded', () => {
-  const newsletterForm = document.getElementById('newsletter-form');
-  if(newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+  document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
-      newsletterForm.style.display = 'none';
-      document.getElementById('newsletter-success').style.display = 'block';
+      // If it's the Log Out button, it will be handled by auth.js if logged in
+      const ariaLabel = link.getAttribute('aria-label') || link.innerText.trim();
+      if (['Wishlist', 'Cart', 'Search'].includes(ariaLabel)) {
+        alert(ariaLabel + ' feature coming soon!');
+      }
     });
-  }
+  });
 });
 
 // ---- Dynamic Active Navigation Link ----
