@@ -192,3 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ---- Dynamic Active Navigation Link ----
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    link.classList.remove('nav-link--active');
+    const linkPath = link.getAttribute('href');
+    if (linkPath === currentPath) {
+      link.classList.add('nav-link--active');
+    }
+  });
+});
