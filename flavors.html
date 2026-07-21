@@ -210,11 +210,30 @@
             <option>Citrus Pack</option>
           </select>
           
-          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
-            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1599</span>
-            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1799</span>
+          
+          <div class="subs-toggle-container" id="subs-container-capsqueezestarterkit">
+            <label class="subs-option active" onclick="updateSubs('capsqueezestarterkit', 'onetime', 1599, 1359)">
+              <input type="radio" name="subs_type_capsqueezestarterkit" value="onetime" class="subs-radio" checked>
+              <div class="subs-details">
+                <div class="subs-title">One-time purchase <span style="font-weight:800;">Rs. 1599</span></div>
+              </div>
+            </label>
+            <label class="subs-option" onclick="updateSubs('capsqueezestarterkit', 'subscribe', 1599, 1359)">
+              <input type="radio" name="subs_type_capsqueezestarterkit" value="subscribe" class="subs-radio">
+              <div class="subs-details">
+                <div class="subs-title">Subscribe & Save <span class="subs-badge">15% OFF</span></div>
+                <div class="subs-desc" style="color:var(--color-coral); font-weight:600; margin-top:6px;">Rs. 1359 / delivery</div>
+                <select class="subs-frequency-select" style="margin-top:12px;">
+                  <option>Deliver Every 1 Week</option>
+                  <option>Deliver Every 2 Weeks</option>
+                  <option>Deliver Every 1 Month</option>
+                </select>
+              </div>
+            </label>
           </div>
-          <button class="pfc-atc" data-name="Cap Squeeze Starter Kit" data-price="1599" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+          
+          <button id="atc-btn-capsqueezestarterkit" class="pfc-atc" data-name="Cap Squeeze Starter Kit" data-price="1599" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-bottom: 20px;">Add to Cart - Rs. 1599</button>
+
         </div>
 
         <!-- PRODUCT 2 -->
@@ -235,11 +254,30 @@
             <option>Berry Explosion Mix</option>
           </select>
           
-          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
-            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1799</span>
-            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1999</span>
+          
+          <div class="subs-toggle-container" id="subs-container-refillmegapack12pods">
+            <label class="subs-option active" onclick="updateSubs('refillmegapack12pods', 'onetime', 1799, 1529)">
+              <input type="radio" name="subs_type_refillmegapack12pods" value="onetime" class="subs-radio" checked>
+              <div class="subs-details">
+                <div class="subs-title">One-time purchase <span style="font-weight:800;">Rs. 1799</span></div>
+              </div>
+            </label>
+            <label class="subs-option" onclick="updateSubs('refillmegapack12pods', 'subscribe', 1799, 1529)">
+              <input type="radio" name="subs_type_refillmegapack12pods" value="subscribe" class="subs-radio">
+              <div class="subs-details">
+                <div class="subs-title">Subscribe & Save <span class="subs-badge">15% OFF</span></div>
+                <div class="subs-desc" style="color:var(--color-coral); font-weight:600; margin-top:6px;">Rs. 1529 / delivery</div>
+                <select class="subs-frequency-select" style="margin-top:12px;">
+                  <option>Deliver Every 1 Week</option>
+                  <option>Deliver Every 2 Weeks</option>
+                  <option>Deliver Every 1 Month</option>
+                </select>
+              </div>
+            </label>
           </div>
-          <button class="pfc-atc" data-name="Refill Mega-Pack (12 Pods)" data-price="1799" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+          
+          <button id="atc-btn-refillmegapack12pods" class="pfc-atc" data-name="Refill Mega-Pack (12 Pods)" data-price="1799" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-bottom: 20px;">Add to Cart - Rs. 1799</button>
+
         </div>
 
         <!-- PRODUCT 3 -->
@@ -263,11 +301,30 @@
             <option>Minty Fresh</option>
           </select>
           
-          <div class="pfc-price" style="display:flex; align-items:baseline; gap: 10px; margin-bottom: 20px;">
-            <span class="pfc-price-main" style="font-size: 1.6rem; font-weight: 800; color: var(--color-text-main);">Rs. 1449</span>
-            <span class="pfc-price-old" style="font-size: 1rem; color: var(--color-text-muted); text-decoration: line-through;">Rs. 1549</span>
+          
+          <div class="subs-toggle-container" id="subs-container-singleflavor6pack">
+            <label class="subs-option active" onclick="updateSubs('singleflavor6pack', 'onetime', 1449, 1231)">
+              <input type="radio" name="subs_type_singleflavor6pack" value="onetime" class="subs-radio" checked>
+              <div class="subs-details">
+                <div class="subs-title">One-time purchase <span style="font-weight:800;">Rs. 1449</span></div>
+              </div>
+            </label>
+            <label class="subs-option" onclick="updateSubs('singleflavor6pack', 'subscribe', 1449, 1231)">
+              <input type="radio" name="subs_type_singleflavor6pack" value="subscribe" class="subs-radio">
+              <div class="subs-details">
+                <div class="subs-title">Subscribe & Save <span class="subs-badge">15% OFF</span></div>
+                <div class="subs-desc" style="color:var(--color-coral); font-weight:600; margin-top:6px;">Rs. 1231 / delivery</div>
+                <select class="subs-frequency-select" style="margin-top:12px;">
+                  <option>Deliver Every 1 Week</option>
+                  <option>Deliver Every 2 Weeks</option>
+                  <option>Deliver Every 1 Month</option>
+                </select>
+              </div>
+            </label>
           </div>
-          <button class="pfc-atc" data-name="Single Flavor 6-Pack" data-price="1449" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Add to Cart</button>
+          
+          <button id="atc-btn-singleflavor6pack" class="pfc-atc" data-name="Single Flavor 6-Pack" data-price="1449" style="width:100%; padding: 14px; background: var(--color-text-main); color: var(--bg-ink); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-bottom: 20px;">Add to Cart - Rs. 1449</button>
+
         </div>
 
       </div>
@@ -432,6 +489,28 @@
   <!-- Supabase & Auth -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/auth.js"></script>
+
+  <script>
+    function updateSubs(prodId, type, basePrice, subPrice) {
+      const container = document.getElementById('subs-container-' + prodId);
+      const options = container.querySelectorAll('.subs-option');
+      const btn = document.getElementById('atc-btn-' + prodId);
+      
+      options.forEach(opt => opt.classList.remove('active'));
+      
+      if (type === 'onetime') {
+        options[0].classList.add('active');
+        options[0].querySelector('input').checked = true;
+        btn.innerHTML = 'Add to Cart - Rs. ' + basePrice;
+        btn.setAttribute('data-price', basePrice);
+      } else {
+        options[1].classList.add('active');
+        options[1].querySelector('input').checked = true;
+        btn.innerHTML = 'Subscribe Now - Rs. ' + subPrice;
+        btn.setAttribute('data-price', subPrice);
+      }
+    }
+  </script>
 </body>
 </html>
 
